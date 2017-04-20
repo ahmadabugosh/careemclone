@@ -22,10 +22,10 @@ Driver.create(driverProps)
 edit(req, res, next)
 
 {
-const driverID =req.params.id;
+const driverId =req.params.id;
 const driverProps=req.body;
-Driver.findByIdAndUpdate({_id: driverID}, driverProps)
-.then((driver)=> Driver.findById({_id:driverID}))
+Driver.findByIdAndUpdate({_id: driverId}, driverProps)
+.then(()=> Driver.findById({_id:driverId}))
 .then(driver => res.send(driver))
 .catch(next);
 
